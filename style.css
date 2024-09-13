@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-image: url("./assets/Mapa.png");
+  background-size: 100%;
+}
+
+h1{
+  color: rgb(255, 255, 255);
+  font-family: 'Courier New', Courier, monospace;
+}
+h2{
+  color: #ffffff;
+  font-family:'Times New Roman', Times, serif;
+}
+
+#fight-section {
+  position: relative;
+  width: 100%; 
+  height: 100%;
+}
+
+.character {
+  width: 10%;
+  position: absolute;
+  height: auto;
+}
+
+.status{
+  color: #ffffff;
+}
+.character img {
+  width: 100%;
+  position: relative;
+}
+
+.health-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #ccc;
+  border: 1px solid #000;
+  margin: 5px 0;
+}
+
+.health {
+  height: 100%;
+  background-color: #4caf50;
+  width: 100%;
+}
+
+#hero {
+  top: 50px;
+  left: 100px;
+}
+
+#enemy {
+  top: 50px;
+  right: 100px;
+}
