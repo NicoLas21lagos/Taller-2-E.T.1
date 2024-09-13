@@ -32,11 +32,11 @@ h2 {
   position: relative;
   width: 80vw;
   height: 80vh;
-  border: 10px solid #ff0000;
+  border: 8px solid #3a9ab0;
 }
 
 .character {
-  width: 10%;
+  width: 8%;
   position: absolute;
   height: auto;
 }
