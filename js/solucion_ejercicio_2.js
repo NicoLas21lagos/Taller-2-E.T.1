@@ -18,8 +18,13 @@ class Character {
     const containerRect = container.getBoundingClientRect();
     const characterRect = characterElement.getBoundingClientRect();
 
-    this.position.top = (containerRect.height - characterRect.height) / 2;
-    this.position.left = (containerRect.width - characterRect.width) / 2;
+    if (this.elementId === "hero") {
+      this.position.top = (containerRect.height - characterRect.height) / 2;
+      this.position.left = containerRect.width * 0.2 - characterRect.width / 2;
+    } else if (this.elementId === "enemy") {
+      this.position.top = (containerRect.height - characterRect.height) / 2;
+      this.position.left = containerRect.width * 0.8 - characterRect.width / 2;
+    }
   }
 
   isAlive() {
@@ -99,15 +104,16 @@ document.addEventListener("keyup", (event) => {
 });
 
 function update() {
-  if (keys["ArrowLeft"]) hero.move("left");
-  if (keys["ArrowRight"]) hero.move("right");
-  if (keys["ArrowUp"]) hero.move("up");
-  if (keys["ArrowDown"]) hero.move("down");
+  if (keys["a"]) hero.move("left");
+  if (keys["d"]) hero.move("right");
+  if (keys["w"]) hero.move("up");
+  if (keys["s"]) hero.move("down");
 
-  if (keys["a"]) enemy.move("left");
-  if (keys["d"]) enemy.move("right");
-  if (keys["w"]) enemy.move("up");
-  if (keys["s"]) enemy.move("down");
+  if (keys["ArrowLeft"]) enemy.move("left");
+  if (keys["ArrowRight"]) enemy.move("right");
+  if (keys["ArrowUp"]) enemy.move("up");
+  if (keys["ArrowDown"]) enemy.move("down");
+
 
   if (keys["Enter"] && checkCollision()) {
     hero.attack(enemy);
@@ -121,3 +127,4 @@ function update() {
 }
 
 update();
+
